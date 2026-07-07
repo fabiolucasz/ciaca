@@ -4,12 +4,11 @@ name = "Home"
 icon = "📄"
 
 [[pages]]
-path = "pages/treinamentos_gratuitos.py"
-name = "Treinamentos gratuitos"
-icon = ":bar_chart:"
-
+path = "pages/dashboard.py"
+name = "Area do Professor"
+icon = "🎓"
 
 [[pages]]
-path = "pages/dashboard.py"
-name = "Treinamentos completos"
-icon = ":bar_chart:"
+path = "pages/treinamentos_gratuitos.py"
+name = "Treinamentos gratuitos (Samples)"
+icon = "📚"

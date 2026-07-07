@@ -1,8 +1,6 @@
-from sqlalchemy import create_engine, Column, Integer, String, Date, Float, ForeignKey, DateTime, Boolean
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+from sqlalchemy import create_engine, Column, Integer, String, Boolean
+#from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.sql import func
-from datetime import datetime
 
 
 
@@ -22,18 +20,15 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = "users"
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    username = Column(String, unique=True, index=True)
-    hashed_password = Column(String)
-
-class Extrato(Base):
-    __tablename__ = "extratos"
-    id = Column(Integer, primary_key=True, index=True)
-    data = Column(Date, index=True)
-    tipo = Column(String, index=True)
-    valor = Column(Float)
-    user_id = Column(Integer, ForeignKey("users.id"))
+    
+    id = Column(Integer, primary_key=True, index=True, nullable=False, autoincrement=True)
+    email = Column(String, nullable=False)
+    hashed_password = Column(String, nullable=False)
+    is_active = Column(Boolean, nullable=False, default=True)
+    is_admin = Column(Boolean, nullable=False, default=False)
+    name = Column(String, nullable=True)
+    title = Column(String, nullable=True)
+    
 
 
 
